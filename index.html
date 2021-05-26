@@ -1,0 +1,255 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"
+      rel="stylesheet"
+    />
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Anton&display=swap"
+      rel="stylesheet"
+    />
+
+    <link rel="stylesheet" href="fonts/icomoon/style.css" />
+
+    <link rel="stylesheet" href="css/owl.carousel.min.css" />
+
+    <link rel="stylesheet" href="css/bootstrap.min.css" />
+
+    <link rel="stylesheet" href="css/style.css" />
+
+    <title>MapCalulator</title>
+    <script src="https://polyfill.io/v3/polyfill.min.js?features=default"></script>
+
+    <style>
+      #map {
+        height: 700px;
+        width: 50%;
+      }
+
+      /* Optional: Makes the sample page fill the window. */
+      html,
+      body {
+        margin: 0;
+        padding: 0;
+      }
+      @media only screen and (max-width: 600px) {
+        #map {
+          width: 100%;
+          height: 50%;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <div class="site-mobile-menu site-navbar-target">
+      <div class="site-mobile-menu-header">
+        <div class="site-mobile-menu-close mt-3">
+          <span class="icon-close2 js-menu-toggle"></span>
+        </div>
+      </div>
+      <div class="site-mobile-menu-body"></div>
+    </div>
+
+    <header
+      class="site-navbar js-sticky-header site-navbar-target"
+      role="banner"
+    >
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-6 col-xl-2">
+            <h1 class="mb-0 site-logo">
+              <a href="index.html"
+                >MAPCALCULATOR<span class="text-primary">.</span>
+              </a>
+            </h1>
+          </div>
+
+          <div class="col-12 col-md-10 d-none d-xl-block">
+            <nav
+              class="site-navigation position-relative text-right"
+              role="navigation"
+            >
+              <ul
+                class="
+                  site-menu
+                  main-menu
+                  js-clone-nav
+                  mr-auto
+                  d-none d-lg-block
+                "
+              >
+                <li><a href="#home-section" class="nav-link">Home</a></li>
+                <li class="has-children">
+                  <a href="#about-section" class="nav-link">About Us</a>
+                  <ul class="dropdown">
+                    <li><a href="#team-section" class="nav-link">Team</a></li>
+                    <li>
+                      <a href="#pricing-section" class="nav-link">Pricing</a>
+                    </li>
+                    <li><a href="#faq-section" class="nav-link">FAQ</a></li>
+                    <li>
+                      <a href="#gallery-section" class="nav-link">Gallery</a>
+                    </li>
+                    <li>
+                      <a href="#services-section" class="nav-link">Services</a>
+                    </li>
+                    <li>
+                      <a href="#testimonials-section" class="nav-link"
+                        >Testimonials</a
+                      >
+                    </li>
+                    <li class="has-children">
+                      <a href="#">More Links</a>
+                      <ul class="dropdown">
+                        <li><a href="#">Menu One</a></li>
+                        <li><a href="#">Menu Two</a></li>
+                        <li><a href="#">Menu Three</a></li>
+                      </ul>
+                    </li>
+                  </ul>
+                </li>
+
+                <li><a href="#blog-section" class="nav-link">Blog</a></li>
+                <li><a href="#contact-section" class="nav-link">Contact</a></li>
+                <li class="social">
+                  <a href="#contact-section" class="nav-link"
+                    ><span class="icon-facebook"></span
+                  ></a>
+                </li>
+                <li class="social">
+                  <a href="#contact-section" class="nav-link"
+                    ><span class="icon-twitter"></span
+                  ></a>
+                </li>
+                <li class="social">
+                  <a href="#contact-section" class="nav-link"
+                    ><span class="icon-linkedin"></span
+                  ></a>
+                </li>
+              </ul>
+            </nav>
+          </div>
+
+          <div
+            class="col-6 d-inline-block d-xl-none ml-md-0 py-3"
+            style="position: relative; top: 3px"
+          >
+            <a href="#" class="site-menu-toggle js-menu-toggle float-right"
+              ><span class="icon-menu h3"></span
+            ></a>
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <div class="hero">
+      <div class="info">
+        <div class="firstdiv">
+          <h1 class="heading">
+            A online tool to calculate area on anywhere on earth..!
+          </h1>
+          <p class="para">
+            Map calculator is a online tool to calculte the are of any place
+            presented on earth. The results can be very from actual number but
+            it gaurentees 99 percent of accuracy..!
+          </p>
+          <span class="scroll">
+            <h2 class="head">SCOLL DOWN TO USE MAP</h2>
+          </span>
+        </div>
+        <div class="seconddiv">
+          <img class="img" src="images/earth12.png" alt="" />
+        </div>
+      </div>
+    </div>
+    <div class="mainwrap">
+      <div class="firstwrap" id="map" onmousemove="calcar()"></div>
+      <div class="secondwrap">
+        <h2 class="heading3">Area is...!</h2>
+        <h2 class="heading2">Area in meter:</h2>
+        <span id="meter">000</span>
+        <h2 class="heading2">Area in Hector</h2>
+        <span id="hector">000</span>
+        <h2 class="heading2">Area in Acres:</h2>
+        <span id="acres">000</span>
+        <h2 class="heading2">Area in km:</h2>
+        <span id="km">000</span>
+        <h2 class="heading2">Area in feet:</h2>
+        <span id="feet">000</span>
+      </div>
+    </div>
+    <div class="container-fluid foot">
+      <div class="row">
+        <div class="col-xl-12 col-md-12 col-sm-12 col-12">
+          <p style="color: white; padding-top: 14px; font-size: 20px">
+            powered by- MapCalculator
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <script
+      src="https://maps.googleapis.com/maps/api/js?libraries=geometry&key=AIzaSyB41DRUbKWJHPxaFjMAwdrzWzbVKartNGg&callback=initMap&v="
+      async
+    ></script>
+
+    <script>
+      function initMap() {
+        const map = new google.maps.Map(document.getElementById("map"), {
+          zoom: 3,
+          center: { lat: 24.886, lng: -70.268 },
+          mapTypeId: "hybrid",
+        });
+        const blueCoords = [
+          { lat: 25.774, lng: -60.19 },
+          { lat: 18.466, lng: -46.118 },
+          { lat: 32.321, lng: -44.757 },
+        ];
+
+        // Construct a draggable blue triangle with geodesic set to false.
+
+        polygon = new google.maps.Polygon({
+          map,
+          paths: blueCoords,
+          strokeColor: "#0000FF",
+          strokeOpacity: 0.8,
+          strokeWeight: 2,
+          fillColor: "#0000FF",
+          fillOpacity: 0.35,
+          draggable: true,
+          geodesic: false,
+          editable: true,
+        });
+      }
+      function calcar() {
+        var area = google.maps.geometry.spherical.computeArea(
+          polygon.getPath()
+        );
+        var hector = area / 10000;
+        var acres = area * 0.00024711;
+        var km = area / 1000000;
+        var feet = area * 10.764;
+        document.getElementById("meter").innerHTML = area;
+        document.getElementById("hector").innerHTML = hector;
+        document.getElementById("acres").innerHTML = acres;
+        document.getElementById("km").innerHTML = km;
+        document.getElementById("feet").innerHTML = feet;
+      }
+    </script>
+
+    <script src="js/jquery-3.3.1.min.js"></script>
+    <script src="js/popper.min.js"></script>
+    <script src="js/bootstrap.min.js"></script>
+    <script src="js/jquery.sticky.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
